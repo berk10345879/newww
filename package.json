@@ -1,0 +1,31 @@
+{
+  "name": "workspace",
+  "version": "1.0.0",
+  "description": "nwee",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently -n SERVER,CLIENT -c blue,green \"npm run dev -w server\" \"npm run dev -w client\"",
+    "build": "npm run build -w client && npm run build -w server",
+    "start": "cross-env NODE_ENV=production node server/dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/berk10345879/newww.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/berk10345879/newww/issues"
+  },
+  "homepage": "https://github.com/berk10345879/newww#readme",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "workspaces": [
+    "server",
+    "client"
+  ]
+}
